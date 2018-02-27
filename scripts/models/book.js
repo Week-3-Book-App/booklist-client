@@ -22,7 +22,7 @@ var __API_URL__ = 'https://am-jf-booklist.herokuapp.com';
   Book.all = [];
 
   Book.loadAll = rows => {
-    Book.all = rows.sort((a, b) => b.title - a.title).map(book => new Book(book));
+    Book.all = rows.sort((a, b) => b.book_id - a.book_id).map(book => new Book(book));
   }
 
   Book.fetchAll = callback =>
