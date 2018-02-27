@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booklist</title>
-    
+
     <script type="text/x-handlebars-template" id="error-template">
       <p>{{status}}: {{statusText}}</p>
     </script>
 
     <script type="text/x-handlebars-template" id="book-template">
       <li class="book-item">
-        <h4>Title: {{title}}</h4>
+        <h4>{{book_id}} Title: {{title}}</h4>
         <img src="{{image_url}}">
         <p>Author: {{author}}</p>
-        <p>ISBN: {{isbn}}</p>
-        <p>Description: {{description}}</p>
+        <!-- <p>ISBN: {{isbn}}</p>
+        <p>Description: {{description}}</p> -->
       </li>
     </script>
 
