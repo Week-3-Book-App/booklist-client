@@ -14,8 +14,9 @@
         <h4><a href="/books/{{book_id}}">{{book_id}}</a> Title: {{title}}</h4>
         <img src="{{image_url}}">
         <p>Author: {{author}}</p>
-        <p class="hide-this">ISBN: {{isbn}}</p>
-        <p class="hide-this">Description: {{description}}</p>
+        <p class="detail">ISBN: {{isbn}}</p>
+        <p class="detail">Description: {{description}}</p>
+        <button data-id="{{book_id}}" class="detail" id="delete" type="click">Delete</button>
       </li>
     </script>
 
