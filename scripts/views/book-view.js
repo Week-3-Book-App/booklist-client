@@ -10,7 +10,7 @@ var app = app || {};
     $('#book-list').empty();
     $('.book-view').show();
     app.Book.all.map(book => $('#book-list').append(book.toHtml()));
-    $('.hide-this').hide();
+    $('.detail').hide();
   }
 
   bookView.initNewForm = function () {
@@ -35,6 +35,11 @@ var app = app || {};
     $('#book-list').empty();
     $('.book-view').show();
     app.Book.all.map(book => $('#book-list').append(book.toHtml()));
+    $('#delete').on('click', function(event) {
+      event.preventDefault();
+      console.log($(this).attr('data-id'));
+      module.Book.destroy($(this).attr('data-id'));
+    })
   }
 
   module.bookView = bookView;

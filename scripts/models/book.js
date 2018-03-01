@@ -1,8 +1,8 @@
 'use strict';
 
 var app = {};
-// var __API_URL__ = 'http://localhost:3000';
-var __API_URL__ = 'https://am-jf-booklist.herokuapp.com';
+var __API_URL__ = 'http://localhost:3000';
+// var __API_URL__ = 'https://am-jf-booklist.herokuapp.com';
 
 (function (module) {
   function errorCallback(err) {
@@ -40,6 +40,14 @@ var __API_URL__ = 'https://am-jf-booklist.herokuapp.com';
     $.get(`${__API_URL__}/api/v1/books/${ctx.params.id}`)
       .then(Book.loadAll)
       .then(callback)
+      .catch(errorCallback);
+
+  Book.destroy = ctx =>
+    $.ajax({
+      url: `${__API_URL__}/api/v1/books/${ctx}`,
+      method: 'DELETE'
+    })
+      .then(() => page('/'))
       .catch(errorCallback);
 
   module.Book = Book;
