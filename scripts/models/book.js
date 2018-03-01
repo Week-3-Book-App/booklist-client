@@ -42,6 +42,14 @@ var __API_URL__ = 'http://localhost:3000';
       .then(callback)
       .catch(errorCallback);
 
+  Book.update = ctx =>
+    $.ajax({
+      url: `${__API_URL__}/api/v1/books/${ctx}`,
+      method: 'DELETE'
+    })
+      .then(() => page('/'))
+      .catch(errorCallback);
+
   Book.destroy = ctx =>
     $.ajax({
       url: `${__API_URL__}/api/v1/books/${ctx}`,

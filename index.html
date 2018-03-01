@@ -16,6 +16,7 @@
         <p>Author: {{author}}</p>
         <p class="detail">ISBN: {{isbn}}</p>
         <p class="detail">Description: {{description}}</p>
+        <button data-id="{{book_id}}" class="detail" id="update" type="click">Update</button>
         <button data-id="{{book_id}}" class="detail" id="delete" type="click">Delete</button>
       </li>
     </script>
@@ -53,6 +54,17 @@
           <input type="text" name="isbn" placeholder="ISBN Number">
           <textarea name="description" placeholder="Description of the book" cols="30" rows="10"></textarea>
           <button type="submit">Add This Book</button>
+        </form>
+      </section>
+      <section class="update-view container">
+        <h3>Update a Book</h3>
+        <form id="update-form">
+          <input type="text" name="title" placeholder="Book Title">
+          <input type="text" name="author" placeholder="Author">
+          <input type="text" name="image_url" placeholder="Book Cover Image Url">
+          <input type="text" name="isbn" placeholder="ISBN Number">
+          <textarea name="description" placeholder="Description of the book" cols="30" rows="10"></textarea>
+          <button type="submit">Update</button>
         </form>
       </section>
     </main>
