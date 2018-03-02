@@ -14,6 +14,14 @@
         <h4><a href="/books/{{book_id}}">{{book_id}}</a> Title: {{title}}</h4>
         <img src="{{image_url}}">
         <p>Author: {{author}}</p>
+      </li>
+    </script>
+
+    <script type="text/x-handlebars-template" id="one-book-template">
+      <li class="book-item">
+        <h4><a href="/books/{{book_id}}">{{book_id}}</a> Title: {{title}}</h4>
+        <img src="{{image_url}}">
+        <p>Author: {{author}}</p>
         <p class="detail">ISBN: {{isbn}}</p>
         <p class="detail">Description: {{description}}</p>
         <button data-id="{{book_id}}" class="detail" id="update" type="click">Update</button>
@@ -22,6 +30,7 @@
     </script>
 
   </head>
+
   <body>
     <header>
       <h1>Book List</h1>
@@ -36,15 +45,21 @@
         </ul>
       </nav>
     </header>
+
     <main>
       <section class="error-view container">
         <h3>Something went wrong</h3>
         <section id="error-message"></section>
       </section>
+
       <section class="book-view container">
         <h3>My Books</h3>
         <ul id="book-list"></ul>
       </section>
+
+      <section class="one-book container">
+      </section>
+
       <section class="new-view container">
         <h3>Add a New Book</h3>
         <form id="new-form">
@@ -56,6 +71,7 @@
           <button type="submit">Add This Book</button>
         </form>
       </section>
+
       <section class="update-view container">
         <h3>Update a Book</h3>
         <form id="update-form">
@@ -68,6 +84,7 @@
         </form>
       </section>
     </main>
+
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
