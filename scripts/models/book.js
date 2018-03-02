@@ -38,8 +38,17 @@ var __API_URL__ = 'https://am-jf-booklist.herokuapp.com';
 
   Book.fetchOne = (ctx, callback) =>
     $.get(`${__API_URL__}/api/v1/books/${ctx.params.id}`)
-      .then(Book.loadAll)
+      .then(results => ctx.book = results[0])
       .then(callback)
+      .catch(errorCallback);
+
+  Book.update = (book, book_id) =>
+    $.ajax({
+      url: `${__API_URL__}/api/v1/books/${book_id}`,
+      method: 'PUT',
+      data: book
+    })
+      .then(() => page('/'))
       .catch(errorCallback);
 
   Book.destroy = ctx =>
